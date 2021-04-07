@@ -1,0 +1,26 @@
+{
+  "name": "kickstarter_eth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "dev": "next dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "fs-extra": "^9.1.0",
+    "ganache-cli": "^6.12.0",
+    "mocha": "^4.0.1",
+    "next": "^10.1.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3",
+    "solc": "^0.6.12",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "web3": "^1.3.0"
+  }
+}
