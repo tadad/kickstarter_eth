@@ -39,8 +39,12 @@ contract Campaign {
             msg.value >= minimumContribution,
             "A minumum contribution is required."
         );
-        approvers[msg.sender] = true;
-        approversCount++;
+
+        if (approvers[msg.sender] != true) {
+            approvers[msg.sender] = true;
+            approversCount++;
+        }
+
     }
 
     function createRequest(string memory description, uint value, address payable recipient) public onlyManager {
@@ -69,7 +73,7 @@ contract Campaign {
         request.approvalCount++;
     }
 
-    function finalizeRequest(uint index) public onlyManager {
+    function finalizeRequest(uint index) public onlyManager payable {
         Request storage request = requests[index];
         require(
             request.approvalCount > (approversCount / 2),

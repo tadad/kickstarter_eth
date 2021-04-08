@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Layout from '../../../components/Layout';
 import { Form, Input, Message, Button } from 'semantic-ui-react';
 import { withRouter } from 'next/router';
@@ -44,6 +45,7 @@ class NewRequest extends React.Component {
     return (
       <Layout>
         <h3>Submit a Request</h3>
+        <Link href={`/campaigns/${this.props.address}/requests`}>back</Link>
         <Form onSubmit={this.onSubmit} error={!!this.state.errMessage}>
           <Form.Field>
             <label>Description</label>
